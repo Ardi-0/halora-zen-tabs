@@ -25,7 +25,3 @@ To turn it off, disable **Light up tabs** in Halora or disable this mod in Sine.
 The extension processes video pixels locally without storing or transmitting frames, browsing history, or personal information to an external service. Settings stay in local extension storage; export creates a JSON file only when requested. When enabled, the mod receives compact, filtered edge-color strips and a dimming value inside Zen. It never receives full video frames or sends data to a server. Neither component uses an account, analytics, or an advertising network.
 
 The internal Sine ID remains `halo-zen-tabs` to preserve existing installations after the GitHub repository rename. This mod is licensed under [MIT](LICENSE). To report a problem, [open an issue](https://github.com/Ardi-0/halora-zen-tabs/issues) and mention your Zen and Sine versions.
-
-## Development
-
-Run `node --check halo-tabs.uc.js` and `node scripts/check-mod.mjs` to validate the script and Sine metadata. GitHub Actions runs both checks on pushes and pull requests.
