@@ -4,11 +4,11 @@
 
 A [Sine](https://github.com/CosmoCreeper/Sine) mod that carries Halora's live video light from the web page into Zen Browser's tab sidebar. It preserves Zen's theme and transparency, and blends the light across the gap between the sidebar and the page.
 
-This repository contains the **Zen mod only**. The [Halora Firefox extension](https://addons.mozilla.org/firefox/addon/halora-video-light-for-zen/) captures colors from YouTube videos and Twitch streams; the mod receives small color strips from that extension inside the browser. **The Firefox Add-ons link is a placeholder while the listing is under review.** The mod does not produce a halo on its own.
+This repository contains the **Zen mod only**. The [Halora Firefox extension](https://addons.mozilla.org/firefox/addon/halora/) captures colors from YouTube videos and Twitch streams; the mod receives small color strips from that extension inside the browser. **The Firefox Add-ons link is a placeholder while the listing is under review.** The mod does not produce a halo on its own.
 
 ## Install
 
-1. Install the Halora Firefox extension [Firefox Add-ons listing](https://addons.mozilla.org/fr/firefox/addon/halora/).
+1. Install the Halora Firefox extension [Firefox Add-ons listing](https://addons.mozilla.org/firefox/addon/halora/).
 2. Add [`Ardi-0/halora-zen-tabs`](https://github.com/Ardi-0/halora-zen-tabs) in Sine. Enable scripts from personal repositories if Sine asks, and restart Zen if prompted.
 3. Open a YouTube video or Twitch stream. In the extension's **Zen tabs** settings, confirm **Halora Tabs connected**, then enable **Light up tabs**.
 
