@@ -8,7 +8,7 @@ This repository contains the **Zen mod only**. The [Halora Firefox extension](ht
 
 ## Install
 
-1. Install the Halora Firefox extension [Firefox Add-ons listing](https://addons.mozilla.org/firefox/addon/halora/).
+1. Install the Halora Firefox extension [Halora Firefox extension](https://addons.mozilla.org/firefox/addon/halora/).
 2. Add [`Ardi-0/halora-zen-tabs`](https://github.com/Ardi-0/halora-zen-tabs) in Sine. Enable scripts from personal repositories if Sine asks, and restart Zen if prompted.
 3. Open a YouTube video or Twitch stream. In the extension's **Zen tabs** settings, confirm **Halora Tabs connected**, then enable **Light up tabs**.
 
