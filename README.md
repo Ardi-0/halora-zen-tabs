@@ -6,6 +6,21 @@ A [Sine](https://github.com/CosmoCreeper/Sine) mod that carries Halora's live vi
 
 This repository contains the **Zen mod only**. The [Halora Firefox extension](https://addons.mozilla.org/firefox/addon/halora/) captures colors from YouTube videos and Twitch streams; the mod receives small color strips from that extension inside the browser. Install both components to extend the page halo into Zen's tabs. The mod does not produce a halo on its own.
 
+## Preview
+
+Halora disabled on the left, enabled on the right. These screenshots show the Firefox extension together with Halora Tabs for Zen.
+
+![Warm video colors extending across the page and Zen's tab sidebar](assets/previews/youtube-warm.png)
+
+<details>
+<summary>More color examples</summary>
+
+![Cool video colors extending across the page and Zen's tab sidebar](assets/previews/youtube-cool.png)
+
+![Soft video colors extending across the page and Zen's tab sidebar](assets/previews/youtube-neutral.png)
+
+</details>
+
 ## Install
 
 1. Install the [Halora Firefox extension](https://addons.mozilla.org/firefox/addon/halora/) in Zen.
