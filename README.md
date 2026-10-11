@@ -18,6 +18,8 @@ If the effect is missing, check that the extension is enabled on the current sit
 
 Use the extension popup to control **Tab light intensity** and **Fade toward outer edge**. The side nearest the page keeps the page halo's full strength to avoid a visible seam. Only the active tab lights its sidebar. The effect clears when playback ends, you leave the video page, or you enter fullscreen.
 
+With Halora 0.2.54 or newer, **Page background → Automatic** also carries the site's solid background beneath the tab light, so the page and sidebar share the same base color. **Transparent** preserves the existing browser backdrop and the earlier rendering. Window transparency and desktop blur depend on your browser and compositor; this mod does not configure them. The extension's page halo works without this mod or any other transparency mod.
+
 To turn it off, disable **Light up tabs** in Halora or disable this mod in Sine. Removing the mod from Sine and restarting Zen removes its script.
 
 ## Privacy and compatibility

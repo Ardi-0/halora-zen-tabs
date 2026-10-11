@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           Halora Tabs for Zen
 // @description    Optional transparent light layer behind Zen's native tabs
-// @version        0.1.13
+// @version        0.1.16
 // @include        chrome://browser/content/browser.xhtml
 // ==/UserScript==
 (() => {
@@ -140,6 +140,8 @@
     return p?.v === 1 && Number.isInteger(p.seq) && p.seq >= 0 && ['left','right'].includes(p.side) &&
       (p.scrollY === undefined || Number.isFinite(p.scrollY) && p.scrollY >= 0 && p.scrollY <= 1e8) &&
       (p.at === undefined || Number.isFinite(p.at) && p.at >= 0) &&
+      (p.base === undefined || Array.isArray(p.base) && p.base.length === 3 &&
+        p.base.every(v=>Number.isInteger(v)&&v>=0&&v<=255)) &&
       validEdges &&
       Number.isInteger(n) && n >= 2 && n <= 256 && Array.isArray(p.rgba) && p.rgba.length === n*4 &&
       [...p.rgba,...p.dim].every(v=>Number.isInteger(v)&&v>=0&&v<=255) &&
@@ -203,6 +205,7 @@
       if(target.width!==w)target.width=w;
       if(target.height!==h)target.height=h;
       const ctx=target.getContext('2d');ctx.clearRect(0,0,w,h);
+      if(p.base){ctx.fillStyle=`rgb(${p.base.join(',')})`;ctx.fillRect(0,0,w,h);}
       if (!p.strength) continue;
       const colour=sampleCanvas(`${band.name}-colour`,band.rgba,band.n,band.vertical,false,refresh);
       const shade=sampleCanvas(`${band.name}-shade`,band.dim,band.n,band.vertical,true,refresh);
@@ -275,6 +278,10 @@
       fade.addColorStop(t,`rgba(0,0,0,${opacity})`);
     }
     ctx.fillStyle=fade;ctx.fillRect(0,0,w,h);
+    // Keep the automatic site base opaque; only the light fades outward.
+    // Legacy/transparent packets omit base and retain the existing rendering.
+    if(p.base){ctx.globalCompositeOperation='destination-over';
+      ctx.fillStyle=`rgb(${p.base.join(',')})`;ctx.fillRect(0,0,w,h);}
     ctx.globalCompositeOperation='source-over';
     paintEdges(p,g,refresh);
     paintedSeq=p.seq;paintedGeometry=geometryKey;
@@ -451,7 +458,7 @@
   window.HaloZenTabs=Object.freeze({destroy,refresh:selectBrowser,
     status:()=>({connected:!!current,visible:!!layer&&layer.style.opacity==='1',shadowCleared:!!shadowTarget,
       edgesVisible:[...edgeLayers.values()].some(canvas=>canvas.style.opacity==='1'),
-      error:lastError,version:'0.1.13'})});
+      error:lastError,version:'0.1.16'})});
   gBrowser.tabContainer.addEventListener('TabSelect',selectBrowser,{signal:abort.signal});
   gBrowser.tabContainer.addEventListener('TabClose',event=>{
     const browser=event.target.linkedBrowser,entry=transports.get(browser);
